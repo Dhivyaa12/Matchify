@@ -1,11 +1,16 @@
 from flask import Flask, request, jsonify
 import joblib
+import os
 
 app = Flask(__name__)
 
+# Absolute paths inside the container
+MODEL_PATH = "app/model/model.pkl"
+VECTORIZER_PATH = "app/model/vectorizer.pkl"
+
 # Load model and vectorizer
-model = joblib.load("../model/model.pkl")
-vectorizer = joblib.load("../model/vectorizer.pkl")
+model = joblib.load(MODEL_PATH)
+vectorizer = joblib.load(VECTORIZER_PATH)
 
 @app.route("/")
 def home():
