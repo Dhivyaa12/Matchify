@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import joblib
-<<<<<<< HEAD
 import os
 app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
